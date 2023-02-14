@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
-
-// export const prerender = true; // turned off bc it causes errors
+export const prerender = true;
 
 export async function load({ setHeaders, fetch }) {
   const res = await fetch(`/api/listContent.json`);

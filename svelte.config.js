@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import remarkGithub from 'remark-github';
 import remarkGfm from 'remark-gfm';
@@ -47,18 +47,10 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({
-			split: false
-		})
-		// https://kit.svelte.dev/docs/configuration#csp
-		// csp: {
-		// 	directives: {
-		// 		'script-src': ['self']
-		// 	},
-		// 	reportOnly: {
-		// 		'script-src': ['self']
-		// 	}
-		// }
+		adapter: adapter({ strict: false }),
+		prerender: {
+			handleMissingId: 'warn',
+		}
 	}
 };
 
