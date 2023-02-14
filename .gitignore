@@ -1,4 +1,5 @@
 .DS_Store
+.jampack
 node_modules
 /.svelte-kit
 /package
